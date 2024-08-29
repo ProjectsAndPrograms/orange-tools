@@ -1,11 +1,9 @@
-```diff
-- Underdevelopment
-```
-
 # orange-tools
 An tool application created for quick use when needed, [Click here to view a live demo](https://projectsandprograms.github.io/orange-tools/index.html)
 
-
+```diff
+- Underdevelopment
+```
 
 ## 🥏 Technolgies Used 
   1. HTML, CSS 
