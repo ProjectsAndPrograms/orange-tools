@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary : #e95420;
+    --secondary: #7a8288; 
+    /* --secondary: #6c757d;  */
+    --success: #38b44a;
+    --danger: #dc3545;
+    --grey: #f0f0f0;
+    --dark-grey: #ced4da;
+    --warning: #ffc107;
+    --info: #0dcaf0;
+    --light-success: #d1e7dd;
+    --light-danger: #f8d7da;
+    --light-warning: #fff3cd;
+    --light-primary: #fbddd2;
+    --light-info: #cff4fc;
+    --light: #ffffff;
+    --dark: #1d2a35;
+    --dark-second: #212529;
+    
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Poppins','Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    background-color: var(--light);
+}
+
+body.dark{
+    --light: #1d2a35;
+    background: var(--dark-second);
+    --dark: #ffffff;
+    --grey: #2b343dc5;
+    --dark-grey: #6c757d;
+}
+ul, li, a{
+    color: var(--dark);
+}
+a:hover{
+    text-decoration: none;
+}
+.text-12{
+    font-size: 12px;
+}
+.text-14{
+    font-size: 14px;
+}
+.text-16{
+    font-size: 16px;
+}
+nav{
+    background-color: var(--light);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.card{
+    box-shadow: 2px 3px 15px 1px rgba(0, 0, 0, 0.1);
+    border: 0;
+}
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 0;
+}
+nav li{
+    height: 50px;
+}
+/* .btn-primary{
+    background-color: var(--primary);
+    border: none;
+}
+    */
+.btn-primary:hover, 
+.btn-primary:active
+.btn-primary:focus{
+    background-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem var(--light-primary);
+} 
+.bi{
+    color: var(--dark);
+    font-size: 22px;
+}
+
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color:var(--dark);
+}
+nav ul li:first-child a{
+    padding-left: 15px;
+    font-weight: 500;
+    font-size: larger;
+}
+nav ul.navbar{
+    margin: 0;
+    padding: 0;
+ /* border-bottom:3px solid var(--primary); */
+}
+nav a:hover{
+    background-color: var(--grey);
+    color: var(--primary);
+}
+
+nav a.active{
+    background-color: var(--grey);
+    color: var(--primary);
+}
+
+nav li:first-child a:hover, 
+.dark-mode-ele a:hover{
+    background-color: var(--light);
+}
+.dark-mode-ele a:hover{
+    cursor: auto;
+}
+.dark-mode-ele a:hover .bi{
+    cursor: pointer;
+}
+li.disabled a{
+    background-color: var(--dark-grey);
+    cursor: not-allowed !important;
+}
+li.disabled a .bi{
+    color: var(--secondary) !important;
+}
+nav li:first-child{
+    margin-right: auto;
+}
+.menu-button{
+    display: none;
+}
+.dropdown{
+    display: inline-block;
+    height: 100%;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    max-width: 200px;
+    min-width: max-content;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+    font-size: 12px;
+    background-color: var(--light);
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: var(--primary);
+    background: var(--light-primary);
+    }
+    
+    ::selection {
+    color: var(--primary);
+    background: var(--light-primary);
+    }
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+.dropdown-content a{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: var(--light); /* the blur effect of sidebar is due to these two properties */
+    backdrop-filter: blur(10px);                     /*  SECOND PROPERTY*/
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidebar li{
+    width: 100%;
+}
+.sidebar li:hover{
+    background-color: var(--grey);
+}
+.sidebar a{
+    width: 100%;
+}
+.sidebar.show{
+    display: none;
+}
+.sidebar .close-btn{
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--light-warning);
+}
+.sidebar li:first-child a{
+    background: var(--primary);
+    font-weight: 500;
+    font-size: larger;
+    width: 50px;
+    outline: 0px;
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+}
+.sidebar li:first-child a:hover{
+    background: var(--danger);
+}
+.sidebar li:first-child:hover{
+    background-color: var(--light);
+}
+
+.toolbar{
+    border: 10px solid var(--grey);
+    border-top: 0;
+    width: 100%;
+ 
+}
+.toolbar ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: var(--grey);
+    padding: 0;
+    margin: 0;
+}
+.toolbar ul li{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.toolbar ul li a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    cursor: pointer;
+}
+.toolbar ul li a:hover{
+    background-color: var(--dark-grey);
+}
+.toolbar ul li:last-child{
+    margin-left: auto;
+    margin-right: 10px;
+}
+.toolbar ul li:last-child{
+    margin-left: auto;
+    margin-right: 10px;
+}
+.rotate-90{
+    transform: rotate(90deg);
+    font-weight: bold;
+    line-height: 0 !important;
+}
+.rotate-90::before{
+    line-height: 0 !important;
+}
+
+
+@media(max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+    .sidebar.show{
+        display: block;
+    }
+}
+@media(max-width: 420px){
+    .sidebar{
+        width: 100%;
+    }
+
+  
+}
+
+
+.splitter {
+    width: 100%;
+    height: calc(100vh - 110px);
+    display: flex;
+}
+
+.splitter.vertical{
+    flex-direction: column;
+}
+.splitter.vertical #separator{
+    cursor: row-resize;
+    width: 100%;
+    background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/hsizegrip.png) center center no-repeat var(--grey);
+    height: 10px;
+}
+
+#separator {
+    cursor: col-resize;
+    /* background-color: var(--gre); */
+    /* background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='30'><path d='M2 0 v30 M5 0 v30 M8 0 v30' fill='none' stroke='black'/></svg>"); */
+    background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat var(--grey);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 10px;
+    height: 100%;
+    min-width: 10px;
+    min-height: 10px;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.horizontal #first {
+    width: 50%;
+    height: 100% !important;
+}
+
+.horizontal #second {
+    width: 50%;
+    height: 100% !important;
+}
+.vertical #first {
+    height: 50%;
+    width: 100% !important;
+}
+
+.vertical #second {
+    height: 50%;
+    width: 100% !important;
+}
+
+.splitter #first textarea{
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 3px;
+    font-size: 12px;
+    font-family: 'verdana', 'system-ui', 'san-serif';
+    color: var(--dark);
+    background-color: inherit;
+}
+
+/* .box{
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+} */
+
+.error_display .error_icon{
+    width: 130px;
+    height: 130px;
+    border-radius: 10px;
+    border: 2px solid #ffe69c;
+    background-color: var(--light-warning);
+    color: var(--warning);
+    opacity: 0.8;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.error_display .icon-box .bi{
+    font-size: 90px;
+    color: var(--warning);
+}
+
+.error_display .message{
+    margin-top: 10px;
+    font-size: 20px;
+    color: var(--warning);
+}
+
+.monaco-editor {
+    overflow: auto; /* Ensure that scrolling is not affected by any other styles */
+    position: relative; /* Adjust position if needed */
+}
+
+.writer {
+    width: 100% !important;
+    display: block !important;
+
+}
+.writer .editorArea{
+    width: 100%;
+    height: 100%;
+}

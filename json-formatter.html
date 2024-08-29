@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange Tools</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="bootstrap/icons.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/united/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="">
+
+    <nav>
+        <ul class="sidebar">
+            <li><a href="javascript::void(0)" onclick=toggleSidebar()><i class="bi bi-x close-btn"></i></a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Products</a></li>
+
+        </ul>
+        <ul class="navbar">
+            <li><a href="./" class="d-flex align-items-center">
+                    <img src="./images/app_logo.png" width="45" alt="app logo" class="me-1">Orange Tools</a>
+            </li>
+            <li class="hideOnMobile">
+                <div class="dropdown">
+                    <a href="javascript::void(0)" class="dropdown-btn">JSON</a>
+                    <div class="dropdown-content">
+                        <a href="./json-formatter.html">Json Fromatter</a>
+                        <a href="./json-writer.html">Json Writer</a>
+                        <!-- <a href="./json-matcher.html">Json Matcher</a> -->
+                    </div>
+                </div>
+            </li>
+
+            <li class="hideOnMobile dark-mode-ele"><a href="#"><i class="bi bi-circle-half"
+                        onclick="toggleDarkMode()"></i></a></li>
+            <li class="menu-button" onclick=toggleSidebar()>
+                <a href="#">
+                    <i class="bi bi-list"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="bg-secodary">
+        <div class=" toolbar">
+            <ul>
+                <li class="disabled saveButton" onclick="downloadFormattedJson()">
+                    <a><i class="bi bi-floppy"></i></a>
+                </li>
+                <li onclick="setOrientation()">
+                    <a><i class="bi bi-layout-split rotate-90 orientation-icon"></i></a>
+                </li>
+               
+                <li>
+                    <button class="btn btn-primary ms-2 btn-sm" id="formatBtn">
+                        Fromat
+                    </button>
+                </li>
+
+                <li class="text-12">Size :&nbsp; <span id="sizeIndicator">__ x __</span></li>
+            </ul>
+
+            <div class="splitter horizontal" id="splitter">
+                <div id="first">
+                    <textarea name="json-string" class="textbox" id="jsonStringInput" spellcheck="false"></textarea>
+                </div>
+                <div id="separator" style="min-width: 7px;"></div>
+                <div id="second">
+                    <div class="box w-100 h-100">
+                        <div class="editorArea w-100 h-100">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor/min/vs/loader.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="json-formatter.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
