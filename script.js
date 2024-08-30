@@ -66,8 +66,12 @@ function dragElement(element, direction) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  if(window.innerWidth <= 430){
+    setOrientation();
+  }
   setSizeIndicator();
   window.addEventListener('resize', setSizeIndicator); 
+
 
   let textBoxes = document.querySelectorAll(".textbox");
   textBoxes.forEach(textBox => {
@@ -106,7 +110,7 @@ function setSizeIndicator() {
   }
 }
 
-function setOrientation(orientation){
+function setOrientation(orientation=""){
   
   var splitter = document.querySelector(".splitter");
   if(splitter.classList.contains("horizontal")){
