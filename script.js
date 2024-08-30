@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if(window.innerWidth <= 430){
     setOrientation();
   }
+  
   setSizeIndicator();
   window.addEventListener('resize', setSizeIndicator); 
 

@@ -326,6 +326,7 @@ nav li:first-child{
     user-select: none;
 }
 
+
 .horizontal #first {
     width: 50%;
     height: 100% !important;
@@ -334,6 +335,7 @@ nav li:first-child{
 .horizontal #second {
     width: 50%;
     height: 100% !important;
+    overflow: hidden;
 }
 .vertical #first {
     height: 50%;
@@ -343,6 +345,7 @@ nav li:first-child{
 .vertical #second {
     height: 50%;
     width: 100% !important;
+    overflow: hidden;
 }
 
 .splitter #first textarea{
@@ -381,6 +384,7 @@ nav li:first-child{
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    margin: 0px 20px;
 }
 .error_display .icon-box .bi{
     font-size: 90px;
@@ -390,6 +394,7 @@ nav li:first-child{
 .error_display .message{
     margin-top: 10px;
     font-size: 20px;
+    text-wrap: nowrap;
     color: var(--warning);
 }
 
