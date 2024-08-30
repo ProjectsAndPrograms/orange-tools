@@ -5,10 +5,15 @@ An tool application created for quick use when needed, [Click here to view a liv
 - Underdevelopment
 ```
 
-## 🥏 Technolgies Used 
+## 🏹 Technolgies Used 
   1. HTML, CSS 
   2. Bootstrap 5
   3. JQuery, JavaScript
+
+## ⛲️ Features 
+  1. Json Formatting 
+  2. Json editor
+
 
 ## Images
 
